@@ -1,0 +1,26 @@
+.reportsList {
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+.reportItem + .reportItem {
+  border-top: 1px solid #ddd;
+}
+
+.reportItem {
+  text-align: left;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.75rem;
+}
+
+.reportItem:hover {
+  background-color: #eee;
+}
+
+.reportItemHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
