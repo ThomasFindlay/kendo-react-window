@@ -1,36 +1,30 @@
 import { useState } from "react";
-import { Window } from "@progress/kendo-react-dialogs";
+import ReportWindow from "./ReportWindow";
 import styles from "./Reports.module.css";
 
-const ReportWindow = props => {
-  const { report, setShowWindow } = props;
-  const { id, author, text, created } = report;
-
-  return (
-    <Window
-      title={author}
-      onClose={() => setShowWindow(false)}
-      initialHeight={350}
-    >
-      <div>{text}</div>
-    </Window>
-  );
-};
-
 const ReportItem = props => {
-  const { report } = props;
-  const { id, author, text, created } = report;
+  const { report, onChangeArchiveStatus } = props;
+  const { author, text, created, archived } = report;
   const [showWindow, setShowWindow] = useState(false);
   return (
     <>
-      <button onClick={() => setShowWindow(true)} className={styles.reportItem}>
+      <button
+        onClick={() => setShowWindow(true)}
+        className={`${styles.reportItem} ${
+          archived ? styles.archivedReport : ""
+        }`}
+      >
         <div>
           {author} - {created}
         </div>
         {text.slice(0, 60).padEnd(63, "...")}
       </button>
       {showWindow ? (
-        <ReportWindow setShowWindow={setShowWindow} report={report} />
+        <ReportWindow
+          setShowWindow={setShowWindow}
+          report={report}
+          onChangeArchiveStatus={onChangeArchiveStatus}
+        />
       ) : null}
     </>
   );

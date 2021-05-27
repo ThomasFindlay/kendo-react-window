@@ -24,3 +24,7 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.archivedReport {
+  background-color: #ccc;
+}
