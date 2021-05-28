@@ -13,18 +13,13 @@
   border: none;
   cursor: pointer;
   padding: 0.75rem;
+  width: 370px;
 }
 
 .reportItem:hover {
   background-color: #eee;
 }
 
-.reportItemHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .archivedReport {
-  background-color: #ccc;
+  background-color: #f3f4f6;
 }

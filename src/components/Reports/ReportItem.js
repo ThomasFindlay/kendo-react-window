@@ -17,7 +17,7 @@ const ReportItem = props => {
         <div>
           {author} - {created}
         </div>
-        {text.slice(0, 60).padEnd(63, "...")}
+        <span>{text.slice(0, 55).padEnd(58, "...")}</span>
       </button>
       {showWindow ? (
         <ReportWindow
